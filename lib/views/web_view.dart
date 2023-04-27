@@ -66,6 +66,7 @@ class _WebViewAppState extends State<WebViewApp> {
               controller.loadUrl(webviewList[i]);
               setState(() {
                 selectedindex;
+                controller;
               });
             },
           ),

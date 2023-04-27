@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modux_exchange/views/splash_screen.dart';
 import 'package:modux_exchange/views/web_view.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WebViewApp(),
+      home: const SplashScreen(),
     );
   }
 }
