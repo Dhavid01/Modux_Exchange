@@ -24,13 +24,16 @@ class _WebViewAppState extends State<WebViewApp> {
     return SafeArea(
       child: Scaffold(
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.black,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.white,
-                  ),
-                  label: "Home",),
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                ),
+                label: "Home",
+              ),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.tune,
@@ -44,23 +47,31 @@ class _WebViewAppState extends State<WebViewApp> {
                   ),
                   label: "Chat"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.headphones), label: "Contact us"),
+                  icon: Icon(
+                    Icons.headphones,
+                    color: Colors.white,
+                  ),
+                  label: "Contact us"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person_pin), label: "Profile"),
+                  icon: Icon(
+                    Icons.person_pin,
+                    color: Colors.white,
+                  ),
+                  label: "Profile"),
             ],
             currentIndex: selectedindex,
-            backgroundColor: Colors.black,
             showSelectedLabels: true,
             showUnselectedLabels: false,
             onTap: (i) {
               controller.loadUrl(webviewList[i]);
               setState(() {
-                selectedindex = 0;
+                selectedindex;
               });
             },
           ),
           body: WebView(
             initialUrl: webviewList[selectedindex],
+            javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (c) {
               controller = c;
             },
