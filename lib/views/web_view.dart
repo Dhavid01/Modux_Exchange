@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_webview_pro/webview_flutter.dart';
 
 class WebViewApp extends StatefulWidget {
   const WebViewApp({super.key});
@@ -12,7 +13,7 @@ class WebViewApp extends StatefulWidget {
 class _WebViewAppState extends State<WebViewApp> {
   int selectedindex = 0;
   final List<String> webviewList = [
-    "https://app.moduxexchange.com",
+    "https://app.moduxexchange.com/",
     "https://app.moduxexchange.com/rate/",
     "https://app.moduxexchange.com/chat/",
     "https://app.moduxexchange.com/support/",
@@ -73,6 +74,7 @@ class _WebViewAppState extends State<WebViewApp> {
           ),
           body: WebView(
             initialUrl: webviewList[selectedindex],
+            initialMediaPlaybackPolicy: AutoMediaPlaybackPolicy.always_allow,
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (c) {
               controller = c;
