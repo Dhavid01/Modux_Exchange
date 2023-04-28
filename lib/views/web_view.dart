@@ -15,7 +15,7 @@ class _WebViewAppState extends State<WebViewApp> {
     "https://app.moduxexchange.com",
     "https://app.moduxexchange.com/rate/",
     "https://app.moduxexchange.com/chat/",
-    "https://api.whatsapp.com/send?phone=2348149969567&text=Hello%20Modux%20Exchange,%20I%20Havet%20a%20complain%20about",
+    "https://app.moduxexchange.com/support/",
     "https://app.moduxexchange.com/profile/",
   ];
   late WebViewController controller;
@@ -39,7 +39,7 @@ class _WebViewAppState extends State<WebViewApp> {
                     Icons.tune,
                     color: Colors.white,
                   ),
-                  label: "Rate,"),
+                  label: "Rate"),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.chat,
@@ -61,12 +61,13 @@ class _WebViewAppState extends State<WebViewApp> {
             ],
             currentIndex: selectedindex,
             showSelectedLabels: true,
+            unselectedItemColor: Colors.white,
+            selectedItemColor: Colors.white,
             showUnselectedLabels: false,
             onTap: (i) {
               controller.loadUrl(webviewList[i]);
               setState(() {
-                selectedindex;
-                controller;
+                selectedindex = i;
               });
             },
           ),

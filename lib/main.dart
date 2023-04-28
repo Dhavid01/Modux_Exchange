@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:modux_exchange/views/splash_screen.dart';
-import 'package:modux_exchange/views/web_view.dart';
 
 void main() {
   runApp(const MyApp());
